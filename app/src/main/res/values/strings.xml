@@ -1,3 +1,57 @@
 <resources>
     <string name="app_name">DaggerMVVM</string>
+    <string-array name="weight">
+        <item>Tonne</item>
+        <item>Kilogram</item>
+        <item>Gram</item>
+        <item>megagram</item>
+        <item>Milligram</item>
+        <item>Stone</item>
+        <item>Pound</item>
+        <item>Ounce</item>
+        <item>carat</item>
+        <item>point</item>
+        <item>slug</item>
+    </string-array>
+    <string-array name="flower">
+        <item>Jasmine</item>
+        <item>Rose</item>
+        <item>Lotus</item>
+        <item>Lily</item>
+        <item>Sunflower</item>
+    </string-array>
+    <string-array name="insect">
+        <item>Ant</item>
+        <item>Bee</item>
+        <item>Butterfly</item>
+        <item>Lilly</item>
+        <item>Grasshopper</item>
+    </string-array>
+    <string-array name="weightMetric">
+        <item>t</item>
+        <item>kg</item>
+        <item>g</item>
+        <item>mg</item>
+        <item>Mg</item>
+        <item>μg</item>
+        <item>Stone</item>
+        <item>Pound</item>
+        <item>Ounce</item>
+        <item>ct</item>
+        <item>pt</item>
+        <item>slug</item>
+    </string-array>
+    <string-array name="weightUnit">
+        <item>1000000</item>
+        <item>1000</item>
+        <item>1</item>
+        <item>0.001</item>
+        <item>1000000</item>
+        <item>6350.29318</item>
+        <item>453.59237</item>
+        <item>28.34952313</item>
+        <item>0.2</item>
+        <item>0.002</item>
+        <item>14593.903</item>
+    </string-array>
 </resources>

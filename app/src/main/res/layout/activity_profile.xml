@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="main"
-            type="com.example.daggermvvm.view.MainViewModel"
+            name="profile"
+            type="com.example.daggermvvm.view.ProfileViewModel"
             />
     </data>
 
@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="To do list"
+            android:text="category list"
             android:textSize="22sp"
             android:layout_marginBottom="16dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,32 +45,11 @@
             android:layout_height="wrap_content"
             android:text="Add"
             android:layout_marginTop="16dp"
-            android:onClick="@{()->main.callAddFunction()}"
+            android:onClick="@{()->profile.functionToBeCalled()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/btn_util"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="util"
-            android:layout_marginRight="16dp"
-            android:onClick="@{()->main.callUtilFunction()}"
-            app:layout_constraintBottom_toBottomOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView" />
-
-        <Button
-            android:id="@+id/btn_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:layout_marginLeft="16dp"
-            android:onClick="@{()->main.callProfileFunction()}"
-            app:layout_constraintBottom_toBottomOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

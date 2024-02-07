@@ -45,20 +45,30 @@
             android:ems="10"
             android:hint="Name"
             android:inputType="text"
-            app:layout_constraintBottom_toTopOf="@+id/eTMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/eTCategory"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
-
+        <EditText
+            android:id="@+id/eTCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Heading"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/eTMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eT" />
         <EditText
             android:id="@+id/eTMultiLine"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
-            android:maxLines="4"
-            android:minLines="4"
             android:hint="Description"
+            android:minLines="4"
+            android:maxLines="4"
             android:inputType="textMultiLine"
             app:layout_constraintBottom_toTopOf="@+id/editTextDate"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,15 +103,6 @@
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eTMultiLine" />
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="task completed"
-            app:layout_constraintBottom_toTopOf="@+id/button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

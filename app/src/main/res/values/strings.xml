@@ -20,6 +20,18 @@
         <item>Lily</item>
         <item>Sunflower</item>
     </string-array>
+    <string-array name="calculator">
+        <item>Addition</item>
+        <item>Subtraction</item>
+        <item>division</item>
+        <item>multiplication</item>
+    </string-array>
+    <string-array name="calculatorSymbol">
+        <item>+</item>
+        <item>-</item>
+        <item>/</item>
+        <item>*</item>
+    </string-array>
     <string-array name="insect">
         <item>Ant</item>
         <item>Bee</item>

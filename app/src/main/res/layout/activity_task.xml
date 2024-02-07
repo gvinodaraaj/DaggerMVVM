@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="task"
+            type="com.example.daggermvvm.view.TaskViewModel"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        tools:context=".view.LoginActivity">
+
+        <TextView
+            android:id="@+id/txtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Util"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{()->task.functionToBeCalled()}"
+            android:text="clculate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <EditText
+            android:id="@+id/edTxt_Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Input"
+            android:maxLines="3"
+            android:minLines="3"
+            android:inputType="numberDecimal"
+            android:text="@{Double.toString(task.utilLiveData.inPut)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <EditText
+            android:id="@+id/edTxt_Input2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Input 2"
+            android:maxLines="3"
+            android:minLines="3"
+            android:inputType="numberDecimal"
+            android:text="@{Double.toString(task.utilLiveData.inPut2)}"
+            app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
+            app:layout_constraintTop_toBottomOf="@+id/edTxt_Input" />
+
+        <TextView
+            android:id="@+id/edTxt_outPut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="OutPut"
+            android:maxLines="8"
+            android:minLines="8"
+            android:text="@{Double.toString(task.utilLiveData.outPut)}"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->task.functionToBeCalled()}"
+            android:text="Calculate"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView" />
+
+        <Spinner
+            android:id="@+id/spinner_output"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/edTxt_Input2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="40dp"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/edTxt_Input" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

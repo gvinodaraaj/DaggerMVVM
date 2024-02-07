@@ -17,12 +17,9 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-
-class CustomAdapter( ) :
-    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+    class CustomAdapter(private val allEvent: List<Event>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     var onItemClick: ((Event) -> Unit)? = null
-    private val allEvent = ArrayList<Event>()
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -63,8 +60,7 @@ class CustomAdapter( ) :
     }
 
     fun updateList(newList: List<Event>) {
-        allEvent.clear()
-        allEvent.addAll(newList)
+
         notifyDataSetChanged()
     }
 

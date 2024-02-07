@@ -38,27 +38,27 @@ class NewEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             isNew=true
         }else{
             isNew=false
-            binding.editTextText.setText(intent.getStringExtra("name"))
-            binding.editTextTextMultiLine.setText(intent.getStringExtra("discription"))
+            binding.eT.setText(intent.getStringExtra("name"))
+            binding.eTMultiLine.setText(intent.getStringExtra("discription"))
             binding.editTextDate.setText(intent.getStringExtra("startDate"))
             binding.editTextDate2.setText(intent.getStringExtra("endDate"))
             binding.button.setText("Update")
 
         }
         binding.button.setOnClickListener {
-            val str: String = binding.editTextText.text.toString()
+            val str: String = binding.eT.text.toString()
             if (str.isNotEmpty()) {
-                Toast.makeText(this, "You entered " + binding.editTextText.text.toString(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "You entered " + binding.eT.text.toString(), Toast.LENGTH_SHORT).show()
                 viewModel= ViewModelProvider(this,
                     ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
                     NewViewModel::class.java)
                if(isNew)
                {
-                   viewModel.insertEvent(Event(str, binding.editTextTextMultiLine.text.toString(),binding.editTextDate.text.toString(),binding.editTextDate2.text.toString()))
+                   viewModel.insertEvent(Event(str, binding.eTMultiLine.text.toString(),binding.editTextDate.text.toString(),binding.editTextDate2.text.toString()))
 
                }else{
 
-                   viewModel.updateEvent(Event(str, binding.editTextTextMultiLine.text.toString(),binding.editTextDate.text.toString(),binding.editTextDate2.text.toString()))
+                   viewModel.updateEvent(Event(str, binding.eTMultiLine.text.toString(),binding.editTextDate.text.toString(),binding.editTextDate2.text.toString()))
 
                }
 

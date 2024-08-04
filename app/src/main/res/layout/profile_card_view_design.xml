@@ -1,74 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    app:cardElevation="6dp">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:layout_marginBottom="8dp"
+        android:padding="8dp">
 
-        <TextView
-            android:id="@+id/imageview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:text="Item"
-            android:textAlignment="viewStart"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageView
+            android:id="@+id/img_status"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/profile_img"
+            android:background="@drawable/rejected" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/txt_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:text="Item"
+            android:layout_marginTop="16dp"
+            android:text="Failed"
+            android:layout_marginStart="8dp"
             android:textAlignment="viewStart"
-            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textSize="10sp"
             android:textStyle="bold"
-            android:layout_marginLeft="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageview"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/img_status"
+            app:layout_constraintTop_toBottomOf="@+id/profile_img" />
 
-
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
+        <TextView
+            android:id="@+id/txt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.48" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:text="Bank 1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/profile_img"
+            app:layout_constraintTop_toTopOf="@+id/profile_img" />
 
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
+        <TextView
+            android:id="@+id/txt_bank_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.7" />
+            android:gravity="start"
+            android:text="Bank Id -"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_time"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
+        <TextView
+            android:id="@+id/txt_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="1001"
+            android:textColor="@color/black"
+            android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:editable="false"
-            android:clickable="false"
-            android:cursorVisible="false"
-            app:layout_constraintTop_toTopOf="parent"  />
+            app:layout_constraintTop_toTopOf="@+id/txt_name" />
 
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="$ 17520,00"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_img"
+            app:layout_constraintStart_toEndOf="@+id/profile_img" />
+
+        <ImageView
+            android:id="@+id/profile_img"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_img" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

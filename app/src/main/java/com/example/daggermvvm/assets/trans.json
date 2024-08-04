@@ -1,0 +1,72 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "user_id": "1",
+      "user_name": "Marcus Gouse",
+      "user_icon": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1722610904/Marcus_klt5bd.png",
+      "bank_id": "1001",
+      "bank_name": "Bank 1",
+      "bank_bg": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1721042437/Group_1321315030_gzvlbc.png",
+      "status": "Completed",
+      "amount": "20,000.00",
+      "type": "CREDIT",
+      "time": "10:51 PM"
+    },
+    {
+      "id": 2,
+      "user_id": "2",
+      "user_name": "Nike",
+      "user_icon": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1722610905/Nike_y0niz1.png",
+      "bank_id": "1002",
+      "bank_name": "Bank 2",
+      "bank_bg": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1721042438/Group_1321315034_iml6he.png",
+      "status": "Failed",
+      "amount": "9.00",
+      "type": "DEBIT",
+      "time": "10:51 PM"
+    },
+    {
+      "id": 3,
+      "user_id": "3",
+      "user_name": "Roger Carder",
+      "user_icon": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1722610905/Roger_wop2uz.png",
+      "bank_id": "1001",
+      "bank_name": "Bank 1",
+      "bank_bg": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1721042437/Group_1321315030_gzvlbc.png",
+      "status": "Completed",
+      "amount": "2,500.00",
+      "type": "DEBIT",
+      "time": "10:51 PM"
+    },
+    {
+      "id": 4,
+      "user_id": "3",
+      "user_name": "Roger Carder",
+      "user_icon": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1722610905/Roger_wop2uz.png",
+      "bank_id": "1001",
+      "bank_name": "Bank 1",
+      "bank_bg": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1721042437/Group_1321315030_gzvlbc.png",
+      "status": "Completed",
+      "amount": "500.00",
+      "type": "CREDIT",
+      "time": "10:51 PM"
+    },
+    {
+      "id": 5,
+      "user_id": "4",
+      "user_name": "Brandon",
+      "user_icon": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1722610904/Brandon_q23pim.png",
+      "bank_id": "1002",
+      "bank_name": "Bank 2",
+      "bank_bg": "https://res.cloudinary.com/dzklqz4hm/image/upload/v1721042438/Group_1321315034_iml6he.png",
+      "status": "Completed",
+      "amount": "20.00",
+      "type": "CREDIT",
+      "time": "10:51 PM"
+    }
+  ],
+  "respcode": "200",
+  "respdesc": "Success.",
+  "status": "Success"
+}

@@ -1,68 +1,82 @@
 package com.example.daggermvvm.view
 
 import android.app.Application
+import android.content.Context
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.daggermvvm.data.Note
-import com.example.daggermvvm.data.ToDo
-import com.example.daggermvvm.data.UserModel
-import com.example.daggermvvm.data.UtilitiModel
-import com.example.daggermvvm.repository.NoteDatabase
-import com.example.daggermvvm.repository.NoteRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.example.daggermvvm.data.BankDetails
+import com.example.daggermvvm.data.ContactDetails
+import com.example.daggermvvm.data.TransactionList
+import com.example.daggermvvm.repository.profileRepo
 
 class ProfileViewModel(application: Application) : AndroidViewModel(application) {
 
-    fun addNew() {
-        addItem(
-            ToDo("Task 1", "check Vinod", "hi Vinod", true)
-        )
-    }
+    private val context = application.applicationContext
 
     // Declare a mutable list
-    private val myMutableList: MutableList<ToDo> = mutableListOf()
+    private val myMutableList: MutableList<TransactionList> = mutableListOf()
+    /*user_id,name,user_bg,bank_id,bank_name,bank_bg,status,amount,type, time,*/
+    /*
+  @SerializedName("id"        ) var id       : Int?    = null,
+  @SerializedName("user_id"   ) var userId   : String? = null,
+  @SerializedName("user_name" ) var userName : String? = null,
+  @SerializedName("user_icon" ) var userIcon : String? = null,
+  @SerializedName("bank_id"   ) var bankId   : String? = null,
+  @SerializedName("bank_name" ) var bankName : String? = null,
+  @SerializedName("bank_bg"   ) var bankBg   : String? = null,
+  @SerializedName("status"    ) var status   : String? = null,
+  @SerializedName("amount"    ) var amount   : String? = null,
+  @SerializedName("type"      ) var type     : String? = null,
+  @SerializedName("time"      ) var time     : String? = null*/
 
-    // Expose a read-only list to the outside
-    fun getMyList(): List<ToDo> {
-        val myMutableList = listOf(
-            ToDo("Task 1", "check Vinod", "hi Vinod", true),
-            ToDo("Task 2", "check Rudra", "hi Rudra", false),
-            ToDo("Task 3", "check Vanitha", "hi Vanitha", false),
-            ToDo("Task 4", "check Vinod", "hi Vinod", true),
-            ToDo("Task 5", "check Rudra", "hi Rudra", false),
-            ToDo("Task 6", "check Vanitha", "hi Vanitha", false),
-            ToDo("Task 7", "check Vinod", "hi Vinod", true),
-            ToDo("Task 8", "check Rudra", "hi Rudra", false),
-            ToDo("Task 9", "check Vanitha", "hi Vanitha", false),
-            ToDo("Task 10", "check Vinod", "hi Vinod", true),
-            ToDo("Task 11", "check Vinod", "hi Vinod", true),
-            ToDo("Task 12", "check Rudra", "hi Rudra", false),
-            ToDo("Task 13", "check Vanitha", "hi Vanitha", false)
-        )
-        return myMutableList
+    fun getMyList(): List<TransactionList> {
+        val repo = profileRepo(context).getUsersFromAssets()
+            ?.map{TransactionList(it.userId!!,it.userName!!,it.userIcon!!,it.bankId!!,it.bankName!!,it.bankBg!!,it.status!!,it.amount!!,it.type!!,it.time!!) }
+        return repo!!
     }
 
-    // Add an item to the list
-    fun addItem(item: ToDo) {
-        myMutableList.add(item)
+    fun getMyContact(): List<ContactDetails> {
+        val list=myMutableList.groupBy { it.user_id }.map{it.key}
+        var contactList:MutableList <ContactDetails> = mutableListOf()
+        for(i in 0 until list.size){
+            val bankId=list[i]
+            contactList.add(getContact(bankId))
+        }
+        return contactList
+    }
+    private fun getContact(userId:String):ContactDetails{
+        val myMutableList = getMyList()
+        val list=myMutableList.filter{it.user_id.equals(userId)}.map{ContactDetails(userId,it.name,it.bank_bg)}.last()
+        return list
+    }
+    fun getTotal():String{
+        val list=getMyList()
+        val gain= list.filter {it.status.equals("Completed")&&it.type.equals("CREDIT")}.map { it.amount.toInt()}.sum()
+        val loss= list.filter {it.status.equals("Completed")&&it.type.equals("DEBIT")}.map { it.amount.toInt()}.sum()
+        val result =gain-loss
+        return "$"+result
     }
 
-    // Remove an item from the list
-    fun removeItem(item: ToDo) {
-        myMutableList.remove(item)
+
+    fun getMyBanks() :List<BankDetails>{
+        val myMutableList = getMyList()
+        val list=myMutableList.groupBy { it.bank_id }.map{it.key}
+        var bankList:MutableList <BankDetails> = mutableListOf()
+        for(i in 0 until list.size){
+            val bankId=list[i]
+            val gain= myMutableList.filter {it.bank_id.equals(bankId)&& it.type.equals("CREDIT")}.map { it.amount.toInt()}.sum()
+            val loss= myMutableList.filter {it.bank_id.equals(bankId)&& it.type.equals("DEBIT")}.map { it.amount.toInt()}.sum()
+            val result = "$"+(gain-loss)
+            bankList.add(getBank(bankId,result))
+        }
+        return bankList
+    }
+    private fun getBank(bankId:String, sum:String):BankDetails{
+        val myMutableList = getMyList()
+        val list=myMutableList.filter{it.bank_id.equals(bankId)}.map{BankDetails(bankId.toString(),it.bank_name,it.bank_bg,sum)}.last()
+        return list
     }
 
-    // Clear the entire list
-    fun clearList() {
-        myMutableList.clear()
-    }
 
-    // val utilLiveData =MutableLiveData(UtilitiModel("vinod","12345"))
-    val utilLiveData = MutableLiveData(
-        ToDo("Task 1", "check Vinod", "hi Vinod", true)
-    )
+
+
 }

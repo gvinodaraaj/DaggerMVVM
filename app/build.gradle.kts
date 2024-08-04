@@ -55,17 +55,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
 
-    implementation ("androidx.room:room-ktx:2.5.1")
-    implementation("androidx.room:room-runtime:2.5.1")
-    annotationProcessor("androidx.room:room-compiler:2.5.1")
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:2.5.1")
+    implementation("com.google.android.material:material:1.8.0")// Check for the latest version
 
-    // optional - RxJava2 support for Room
-    implementation("androidx.room:room-rxjava2:2.5.1")
-
-    // optional - RxJava3 support for Room
-    implementation("androidx.room:room-rxjava3:2.5.1")
 
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 
@@ -74,5 +65,7 @@ dependencies {
 
     implementation ("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
-    implementation ("com.squareup.picasso:picasso:2.8")
+    implementation("com.google.code.gson:gson:2.8.8")
+    implementation ("com.github.bumptech.glide:glide:4.14.2")
+    kapt("com.github.bumptech.glide:compiler:4.14.2")
 }

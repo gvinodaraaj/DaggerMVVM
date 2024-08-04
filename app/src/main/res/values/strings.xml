@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DaggerMVVM</string>
+    <string name="app_name">M2P</string>
     <string-array name="weight">
         <item>Tonne</item>
         <item>Kilogram</item>

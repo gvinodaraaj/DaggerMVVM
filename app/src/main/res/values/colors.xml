@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="back_ground">#F3F3F5</color>
+    <color name="text_bg_gray_1">#2E3134</color>
+    <color name="text_bg_blue_1">#1434CB</color>#
+    <color name="bank_background">#4A6AFF</color>
 </resources>

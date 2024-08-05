@@ -1,6 +1,7 @@
 package com.example.daggermvvm.view.adapter
 
 import android.content.Context
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.daggermvvm.R
 import com.example.daggermvvm.data.model.TransactionList
+import com.example.daggermvvm.utile.StringFormater.moneyString
 
 class TransactionAdapter(private val context: Context, private var allEvent: List<TransactionList>) : RecyclerView.Adapter<TransactionAdapter.ViewHolder>() {
 
     var onItemClick: ((TransactionList) -> Unit)? = null
+    val displayMetrics = DisplayMetrics()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -29,11 +32,12 @@ class TransactionAdapter(private val context: Context, private var allEvent: Lis
             holder.textTime.text = allEvent.get(position).time
             holder.textStatus.text=allEvent.get(position).status
             holder.textBank.text = allEvent.get(position).bank_name
+
             if(allEvent.get(position).type.equals("CREDIT")) {
-                holder.textAmount.text = "+"+allEvent.get(position).amount+"USD"
+                holder.textAmount.text = allEvent.get(position).amount.moneyString("+","USD")
             }
             else{
-                holder.textAmount.text = "-"+allEvent.get(position).amount+"USD"
+                holder.textAmount.text = allEvent.get(position).amount.moneyString("-","USD")
             }
             if(allEvent.get(position).status.equals("Completed"))
             {

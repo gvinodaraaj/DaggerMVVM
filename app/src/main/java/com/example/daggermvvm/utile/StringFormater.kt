@@ -1,11 +1,19 @@
 package com.example.daggermvvm.utile
 
+import java.text.DecimalFormat
+import java.text.NumberFormat
+import java.util.Locale
+
 object StringFormater {
     fun String.removeFormat():String{
-        return this.split(".").get(0).replace(",", "")
+        return this.replace(",", "")
     }
 
     fun String.firstString():String{
         return this.split(" ").get(0)
+    }
+    fun String.moneyString( prefix:String="",sufix:String=""):String{
+        val numberFormat = NumberFormat.getNumberInstance(Locale.US)
+        return prefix+numberFormat.format(this.toDouble())+" "+sufix
     }
 }

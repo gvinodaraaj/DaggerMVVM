@@ -53,11 +53,11 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
     fun getTotal(): String {
         val list = getMyList()
         val gain = list.filter { it.status.equals("Completed") && it.type.equals("CREDIT") }
-            .map { it.amount.toInt() }.sum()
+            .map { it.amount.toDouble() }.sum()
         val loss = list.filter { it.status.equals("Completed") && it.type.equals("DEBIT") }
-            .map { it.amount.toInt() }.sum()
+            .map { it.amount.toDouble() }.sum()
         val result = gain - loss
-        return "$" + result
+        return result.toString()
     }
 
     fun getMyBanks(): List<BankDetails> {
@@ -68,10 +68,10 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
             val bankId = list[i]
             val gain =
                 myMutableList.filter { it.bank_id.equals(bankId) && it.type.equals("CREDIT") }
-                    .map { it.amount.toInt() }.sum()
+                    .map { it.amount.toDouble() }.sum()
             val loss = myMutableList.filter { it.bank_id.equals(bankId) && it.type.equals("DEBIT") }
-                .map { it.amount.toInt() }.sum()
-            val result = "$" + (gain - loss)
+                .map { it.amount.toDouble() }.sum()
+            val result = (gain - loss).toString()
             bankList.add(getBank(bankId, result))
         }
         return bankList
@@ -80,7 +80,7 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
     private fun getBank(bankId: String, sum: String): BankDetails {
         val myMutableList = getMyList()
         val list = myMutableList.filter { it.bank_id.equals(bankId) }
-            .map { BankDetails(bankId.toString(), it.bank_name, it.bank_bg, sum) }.last()
+            .map { BankDetails(bankId, it.bank_name, it.bank_bg, sum) }.last()
         return list
     }
 

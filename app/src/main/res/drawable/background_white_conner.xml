@@ -2,22 +2,24 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Background shape -->
     <item>
-        <shape
-            android:shape="rectangle">
-            <solid android:color="@color/black"/> <!-- Background color -->
-            <corners android:radius="0dp"/> <!-- Corner radius -->
+        <shape android:shape="rectangle">
+            <solid android:color="@color/black" /> <!-- Background color -->
+            <corners android:radius="0dp" /> <!-- Corner radius -->
         </shape>
     </item>
     <!-- Border line -->
-    <item android:right="3dp" android:left="3dp" android:top="3dp" android:bottom="3dp">
-        <shape
-            android:shape="rectangle">
-            <solid android:color="@color/back_ground"/> <!-- Background color -->
+    <item
+        android:bottom="3dp"
+        android:left="3dp"
+        android:right="3dp"
+        android:top="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/back_ground" /> <!-- Background color -->
 
             <stroke
                 android:width="3dp"
-                android:color="@color/back_ground"/> <!-- Border color -->
-            <corners android:radius="20dp"/> <!-- Corner radius to match the background shape -->
+                android:color="@color/back_ground" /> <!-- Border color -->
+            <corners android:radius="20dp" /> <!-- Corner radius to match the background shape -->
         </shape>
     </item>
 </layer-list>

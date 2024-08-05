@@ -1,4 +1,4 @@
-package com.example.daggermvvm.data
+package com.example.daggermvvm.data.model
 
 data class BankDetails(
     val bank_id: String,

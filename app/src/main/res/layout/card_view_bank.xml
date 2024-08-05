@@ -11,11 +11,9 @@
         android:id="@+id/lay_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bank_background"
         android:orientation="horizontal"
         android:paddingVertical="8dp"
-        android:paddingStart="16dp"
-        >
+        android:paddingStart="16dp">
 
         <TextView
             android:id="@+id/txt_val_bank"

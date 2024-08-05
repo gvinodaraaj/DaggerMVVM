@@ -4,15 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.daggermvvm.R
-import com.example.daggermvvm.data.TransactionList
+import com.example.daggermvvm.data.model.TransactionList
 
 class TransactionAdapter(private val context: Context, private var allEvent: List<TransactionList>) : RecyclerView.Adapter<TransactionAdapter.ViewHolder>() {
 
@@ -29,7 +27,7 @@ class TransactionAdapter(private val context: Context, private var allEvent: Lis
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             holder.textName.text=allEvent.get(position).name
             holder.textTime.text = allEvent.get(position).time
-
+            holder.textStatus.text=allEvent.get(position).status
             holder.textBank.text = allEvent.get(position).bank_name
             if(allEvent.get(position).type.equals("CREDIT")) {
                 holder.textAmount.text = "+"+allEvent.get(position).amount+"USD"
@@ -39,12 +37,13 @@ class TransactionAdapter(private val context: Context, private var allEvent: Lis
             }
             if(allEvent.get(position).status.equals("Completed"))
             {
-                holder.textStatus.text="Completed"
                 holder.imageStatus.background =ContextCompat.getDrawable(context, R.drawable.accepted)
+            } else{
+                holder.imageStatus.background =ContextCompat.getDrawable(context, R.drawable.rejected)
             }
 
             Glide.with(context)
-                .load("https://dummyimage.com/300x200/000/fff") // URL or resource ID
+                .load(allEvent.get(position).user_bg) // URL or resource ID
                 .placeholder(R.drawable.profile_img) // Optional placeholder image
                 .error(R.drawable.profile_img) // Optional error image
                 .into(holder.imageProfile)

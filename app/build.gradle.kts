@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.daggermvvm"
+    namespace = "com.example.m2p"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.daggermvvm"
+        applicationId = "com.example.m2p"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -68,4 +68,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.8")
     implementation ("com.github.bumptech.glide:glide:4.14.2")
     kapt("com.github.bumptech.glide:compiler:4.14.2")
+
+    implementation("com.google.android.material:material:1.7.0")
+
 }

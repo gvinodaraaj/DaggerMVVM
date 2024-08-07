@@ -1,4 +1,4 @@
-package com.example.daggermvvm
+package com.example.m2p
 
 import org.junit.Test
 

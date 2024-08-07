@@ -1,7 +1,6 @@
-package com.example.daggermvvm.view.adapter
+package com.example.m2p.view.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +8,14 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.daggermvvm.R
-import com.example.daggermvvm.data.model.BankDetails
-import com.example.daggermvvm.utile.LayoutBackgroundTarget
-import com.example.daggermvvm.utile.StringFormater.moneyString
+import com.example.m2p.R
+import com.example.m2p.data.model.BankDetails
+import com.example.m2p.utile.LayoutBackgroundTarget
+import com.example.m2p.utile.StringFormater.moneyString
 
 class BankAdapter(private val sWidth:Double,private val context: Context, private var allEvent: List<BankDetails>) :
     RecyclerView.Adapter<BankAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_view_bank, parent, false)
         return ViewHolder(view)
@@ -40,7 +38,7 @@ class BankAdapter(private val sWidth:Double,private val context: Context, privat
         return allEvent.size
     }
 
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textBankName: TextView = itemView.findViewById(R.id.txt_val_bank)
         val textBankId: TextView = itemView.findViewById(R.id.txt_bank_id_val)
         val textBalance: TextView = itemView.findViewById(R.id.txt_bank_total_val)

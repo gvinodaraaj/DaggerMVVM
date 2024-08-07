@@ -1,4 +1,4 @@
-package com.example.daggermvvm.view.adapter
+package com.example.m2p.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,12 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.daggermvvm.R
-import com.example.daggermvvm.data.model.ContactDetails
-import com.example.daggermvvm.utile.StringFormater.firstString
+import com.example.m2p.R
+import com.example.m2p.data.model.ContactDetails
+import com.example.m2p.utile.StringFormater.firstString
 
 class ContactAdapter(private val context: Context, private var allEvent: List<ContactDetails>) :
     RecyclerView.Adapter<ContactAdapter.ViewHolder>() {

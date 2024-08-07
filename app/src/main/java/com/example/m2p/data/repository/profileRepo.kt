@@ -1,7 +1,7 @@
-package com.example.daggermvvm.data.repository
+package com.example.m2p.data.repository
 
 import android.content.Context
-import com.example.daggermvvm.data.model.Transactions
+import com.example.m2p.data.model.Transactions
 import com.google.gson.Gson
 import java.io.InputStream
 import com.google.gson.reflect.TypeToken

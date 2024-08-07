@@ -1,4 +1,4 @@
-package com.example.daggermvvm.data.model
+package com.example.m2p.data.model
 
 data class TransactionList(
     val user_id: String,

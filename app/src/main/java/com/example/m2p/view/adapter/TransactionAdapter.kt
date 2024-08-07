@@ -1,4 +1,4 @@
-package com.example.daggermvvm.view.adapter
+package com.example.m2p.view.adapter
 
 import android.content.Context
 import android.util.DisplayMetrics
@@ -10,9 +10,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.daggermvvm.R
-import com.example.daggermvvm.data.model.TransactionList
-import com.example.daggermvvm.utile.StringFormater.moneyString
+import com.example.m2p.R
+import com.example.m2p.data.model.TransactionList
+import com.example.m2p.utile.StringFormater.moneyString
 
 class TransactionAdapter(private val context: Context, private var allEvent: List<TransactionList>) : RecyclerView.Adapter<TransactionAdapter.ViewHolder>() {
 

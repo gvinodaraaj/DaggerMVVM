@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "DaggerMVVM"
+rootProject.name = "m2p"
 include(":app")
  

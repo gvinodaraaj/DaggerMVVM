@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@android:drawable/dialog_holo_dark_frame"
+        android:iconTint="@color/black"
+        android:titleTextColor="@color/menu_item_color"
+        android:title="Home" />
+    <item
+        android:id="@+id/navigation_walet"
+        android:icon="@android:drawable/ic_menu_save"
+        android:iconTint="@color/black"
+        android:titleTextColor="@color/menu_item_color"
+        android:title="walet" />
+    <item
+        android:id="@+id/navigation_barcode"
+        android:checked="true"
+        android:title=""
+        android:titleTextColor="@color/menu_item_color"
+        android:visible="true"/>
+    <item
+        android:id="@+id/navigation_transfer"
+        android:icon="@android:drawable/ic_menu_send"
+        android:iconTint="@color/black"
+        android:titleTextColor="@color/menu_item_color"
+        android:title="transfer" />
+    <item
+        android:id="@+id/navigation_contact"
+        android:icon="@android:drawable/stat_sys_headset"
+        android:iconTint="@color/black"
+        android:titleTextColor="@color/menu_item_color"
+        android:title="contact" />
+</menu>

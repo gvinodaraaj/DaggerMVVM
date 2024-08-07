@@ -1,12 +1,12 @@
-package com.example.daggermvvm.view
+package com.example.m2p.view
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.daggermvvm.data.model.BankDetails
-import com.example.daggermvvm.data.model.ContactDetails
-import com.example.daggermvvm.data.model.TransactionList
-import com.example.daggermvvm.data.repository.profileRepo
-import com.example.daggermvvm.utile.StringFormater.removeFormat
+import com.example.m2p.data.model.BankDetails
+import com.example.m2p.data.model.ContactDetails
+import com.example.m2p.data.model.TransactionList
+import com.example.m2p.data.repository.profileRepo
+import com.example.m2p.utile.StringFormater.removeFormat
 
 class ProfileViewModel(application: Application) : AndroidViewModel(application) {
 

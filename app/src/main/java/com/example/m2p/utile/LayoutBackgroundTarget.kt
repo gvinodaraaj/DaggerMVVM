@@ -1,7 +1,6 @@
-package com.example.daggermvvm.utile
+package com.example.m2p.utile
 
 import android.graphics.drawable.Drawable
-import android.widget.RelativeLayout
 import androidx.annotation.NonNull
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.bumptech.glide.request.target.CustomTarget

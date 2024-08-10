@@ -9,7 +9,6 @@
     </item>
     <!-- Border line -->
     <item
-        android:bottom="3dp"
         android:left="3dp"
         android:right="3dp"
         android:top="3dp">
@@ -19,7 +18,7 @@
             <stroke
                 android:width="3dp"
                 android:color="@color/back_ground" /> <!-- Border color -->
-            <corners android:radius="20dp" /> <!-- Corner radius to match the background shape -->
+            <corners android:topRightRadius="20dp" android:topLeftRadius="20dp" /> <!-- Corner radius to match the background shape -->
         </shape>
     </item>
 </layer-list>

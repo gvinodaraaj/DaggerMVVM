@@ -4,6 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -45,6 +46,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.firebase:firebase-messaging-ktx:24.0.0")
     val nav_version = "2.7.5"
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -70,5 +72,8 @@ dependencies {
     kapt("com.github.bumptech.glide:compiler:4.14.2")
 
     implementation("com.google.android.material:material:1.7.0")
+  //  implementation ("com.google.firebase:firebase-messaging:23.2.0") // Check for the latest version
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+
 
 }

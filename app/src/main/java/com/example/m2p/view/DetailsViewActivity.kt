@@ -10,28 +10,33 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.m2p.R
-import com.example.m2p.databinding.ActivityViewBinding
+import com.example.m2p.databinding.VideoLayoutBindingImpl
 
 
 class DetailsViewActivity : AppCompatActivity() {
-    lateinit var binding: ActivityViewBinding
+    lateinit var binding: VideoLayoutBindingImpl
     lateinit var viewModel: DetailsViewModel
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide();
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_view)
+        binding = DataBindingUtil.setContentView(this, R.layout.video_layout)
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
         binding.details = viewModel
 
         val mediaController= MediaController(this)
-        mediaController.setAnchorView(binding.videoView)
+        mediaController.setAnchorView(binding.videoA)
+        val mediaControllerb= MediaController(this)
+        mediaControllerb.setAnchorView(binding.videoB)
 
-        val onlineUri:Uri=Uri.parse("https://file-examples.com/storage/fe44eeb9cb66ab8ce934f14/2017/04/file_example_MP4_480_1_5MG.mp4")
-        val offlineUri:Uri=Uri.parse("android.resourse://$packageName/${R.raw.test}")
-        binding.videoView.setMediaController(mediaController)
-        binding.videoView.setVideoURI(onlineUri)
-        binding.videoView.requestFocus()
+        val onlineUri:Uri=Uri.parse("https://sample-videos.com/video321/mp4/480/big_buck_bunny_480p_5mb.mp4")
+        val offlineUri:Uri=Uri.parse("android.resourse://$packageName/${R.raw.test2}")
+        binding.videoA.setMediaController(mediaController)
+        binding.videoA.setVideoURI(onlineUri)
+        binding.videoA.requestFocus()
+
+        binding.videoB.setMediaController(mediaControllerb)
+        binding.videoB.setVideoURI(offlineUri)
 
     }
 

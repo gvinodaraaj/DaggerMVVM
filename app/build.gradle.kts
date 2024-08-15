@@ -74,6 +74,7 @@ dependencies {
     implementation("com.google.android.material:material:1.7.0")
   //  implementation ("com.google.firebase:firebase-messaging:23.2.0") // Check for the latest version
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation ("androidx.work:work-runtime-ktx:2.8.0")
 
 
 }

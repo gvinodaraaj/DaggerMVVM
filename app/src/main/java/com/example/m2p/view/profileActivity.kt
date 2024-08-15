@@ -12,6 +12,7 @@ import com.example.m2p.R
 import com.example.m2p.databinding.ActivityProfileBinding
 import com.example.m2p.utile.StringFormater.moneyString
 import com.example.m2p.utile.createNotificationChannel
+import com.example.m2p.utile.scheduleAlarm
 import com.example.m2p.utile.showNotification
 import com.example.m2p.view.adapter.BankAdapter
 import com.example.m2p.view.adapter.ContactAdapter
@@ -53,9 +54,10 @@ class profileActivity : AppCompatActivity() {
             TransactionAdapter(this.applicationContext!!, profileViewModel.getMyList())
         binding.recyclerviewTranc.adapter = adapterTranction
         binding.floatingActionButton.setOnClickListener {
-            val intent = Intent(this, DetailsViewActivity::class.java)
-            startActivity(intent)
+           // val intent = Intent(this, DetailsViewActivity::class.java)
+          //  startActivity(intent)
            // showNotification(this)
+            scheduleAlarm(this)
         }
         binding.imageView.setOnClickListener {
             val intent = Intent(this, DetailsViewActivity::class.java)
